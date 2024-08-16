@@ -3,37 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Login - MilkMart</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MilkMart - Customer Profile</title>
+    <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Customer Login</h1>
-            <p>Manage your milk subscriptions and orders.</p>
+            <h1>Create Your Profile</h1>
         </header>
 
-        <form class="login-form">
-            <input type="text" placeholder="Customer ID" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+        <form id="customerForm">
+            <h2>Personal Details</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <h2>Service Required</h2>
+            <label for="service">Choose Service:</label>
+            <select id="service" name="service" required>
+                <option value="1day">1 Day Milk Delivery</option>
+                <option value="1month">1 Month Subscription</option>
+            </select>
+
+            <label for="quantity">Amount of Milk (in liters):</label>
+            <input type="number" id="quantity" name="quantity" min="0.5" step="0.5" required>
+
+            <div id="villagerOption" style="display: none;">
+                <label for="specificVillager">Do you want milk from a specific villager?</label>
+                <select id="specificVillager" name="specificVillager">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
         </form>
 
-        <div class="dashboard">
-            <h2>Your Dashboard</h2>
-            <div class="subscriptions">
-                <h3>Your Subscriptions</h3>
-                <ul>
-                    <li>Vendor A - 2L Cow Milk - Area X</li>
-                    <li>Vendor B - 1L Buffalo Milk - Area Y</li>
-                </ul>
-            </div>
-            <div class="alerts">
-                <h3>Alerts</h3>
-                <p>No new messages.</p>
-                <p>No pending orders.</p>
-            </div>
+        <div id="matchingVendors" style="display: none;">
+            <h2>Matching Vendors</h2>
+            <ul id="vendorList"></ul>
         </div>
     </div>
+
+    <footer class="footer1">Developed By Rajat Singh</footer>
+
+    <script src="script2.js"></script>
 </body>
 </html>
