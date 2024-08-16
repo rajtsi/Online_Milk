@@ -10,8 +10,8 @@ body {
 }
 
 .container { 
-    background-image: url(Back.jpg);
-    background-repeat: no-repeat; /* Prevents repeating the image */
+/*     background-image: url(Back.jpg);
+    background-repeat: no-repeat; /* Prevents repeating the image */ */
     background-position: center;
     text-align: center;
     padding: 20px;
